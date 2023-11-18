@@ -1,0 +1,1157 @@
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap');
+@import url('https://fonts.cdnfonts.com/css/made-infinity-personal-use');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background-image: url(image/background-main.png);
+    --background: #ffffff;
+    --1background: #ffffff;
+    --color:  black;
+    --1color: rgb(0, 0, 0);
+    --box-shadow: 5px 5px 5px  rgb(109, 109, 109, 0.5);
+    --2color: #ffffff;
+    --border: none;
+    --PlaceHoldercolor: #B1B1B1;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: var(--background);
+    font-family: 'Geologica', sans-serif;
+}
+
+
+ul{
+    display: flex;
+}
+
+header > h1 {
+    color: #7124c4;
+}
+
+.connect {
+    border-radius: 15px;
+    padding: 10px;
+    color: white;
+    background: #7124c4;
+    border: none;
+    cursor: pointer;
+    font-family: 'Geologica', sans-serif;
+}
+
+.connect:hover {
+    scale: 1.1;
+    transition-duration: 0.2s;
+}
+
+
+
+ul > li {
+    padding: 30px;
+    list-style: none;
+    cursor: pointer;
+    color: var(--color);
+    font-size: 20px;
+}
+
+li:hover {
+    color: #7124c4;
+    scale: 1.1;
+    transition-duration: 0.2s;
+}
+
+.g-recaptcha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 30px; */
+}
+
+.comingsoon {
+    text-decoration: line-through;
+}
+
+main {
+    width: 100%;
+    height: 90%;
+    background-image: var(--background-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+main > .container {
+    width: 20%;
+    height: 70%;
+    background: var(--1background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: var(--color);
+    margin: 20px;  
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    border: var(--border)
+}
+
+header > .right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header > .right > img {
+    margin-left: 25px;
+    cursor: pointer;
+}
+
+header > .right > img:hover {
+    scale: 1.1;
+    transition-duration: 0.2s;
+}
+
+.container > .mainText h1{
+    font-family: 'Geologica', sans-serif;
+    font-size: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    justify-content: space-around;
+    height: 80%;
+    width: 80%;
+    margin-top: 20px;
+
+}
+
+form > .value {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    color: var(--1color);
+    font-size: 20px;
+    font-family: 'MADE INFINITY PERSONAL USE', sans-serif;                
+}
+
+form > .value > .input-style > input {
+    width: 70%;
+    height: 90%;
+    font-size: 30px;
+    font-family: 'Geologica', sans-serif;
+    padding-left: 10px;
+    border: none;
+    outline: none;
+    background: var(--2color);
+    color: var(--1color);
+}
+
+
+input::placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    font-size: 17px;
+    font-family: 'Geologica', sans-serif;
+}
+
+#address {
+    font-size: 20px;
+    width: 100%;
+}
+
+.input-style {
+    padding: 8px 17px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 7px;
+    border: 2px solid black;
+    box-shadow: var(--box-shadow);
+    background: var(--2color);
+}
+
+.payment-options {
+    width: 80%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    color: var(--1color);
+    font-size: 20px;
+    font-family: 'MADE INFINITY PERSONAL USE', sans-serif;
+    margin-bottom: 40px;
+}
+
+.pixpay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.pixpay > p {
+    margin-left: 10px;
+}
+
+.coins {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'MADE INFINITY PERSONAL USE', sans-serif;            
+    
+}
+
+.coins > p{
+    margin-left: 5px;
+}
+
+footer {
+    height: 5%;
+    padding: 10px;
+    background: #6D07F1;
+    font-size: 8px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#change-theme {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.checkbox-icon > input[type="checkbox"] {
+   opacity: 0; 
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   opacity: 0; 
+}
+
+.checkbox-icon {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.button-buy > button {
+    margin-bottom: 10px;
+    padding: 3px 80px;
+    border-radius: 10px;
+    border: none;
+    background: #7124c4;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.button-buy > button > .button-details {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 10px;
+}
+
+.button-buy > button > .button-details > p {
+    font-family: 'MADE INFINITY PERSONAL USE', sans-serif;
+    font-size: 20px;
+    color: white;
+}
+
+.button-buy > button:hover {
+    scale: 1.05;
+    transition: 0.5s;
+}
+
+#buttonConfirm:hover {
+    scale: 1.05;
+    transition: 0.5s;
+}
+
+#buttonConfirm {
+    font-size: 18px;
+}
+
+i {
+    padding: 10px 5px;
+}
+
+#modalConfirm {
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: 'Geologica', sans-serif;
+    border: none;
+    padding: 20px;
+    background: var(--1background);
+    overflow: hidden;
+}
+
+dialog {
+    box-shadow: var(--box-shadow);
+}
+
+#modalPayment {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: 'Geologica', sans-serif;
+    border: none;
+    padding: 20px;
+    background: var(--1background);
+}
+
+#modalLoading {
+    width: 450px;
+    height: 350px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: 'Geologica', sans-serif;
+    border: none;
+    padding: 20px;
+    background: var(--1background);
+}
+
+#modalPaymentConfirm {
+    width: 400px;
+    height: 350px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-family: 'Geologica', sans-serif;
+    border: none;
+    padding: 20px;
+    background: var(--1background);
+}
+
+.contentPaymentConfirm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+    color: var(--color);
+}
+
+.text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.text > h2 {
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.text > p {
+    font-size: 15px;
+    margin-top: 20px;
+    font-weight: 100;
+}
+
+
+.contentLoading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+    color: var(--color);
+}
+
+.contentLoading > h2{
+    font-size: 20px;
+    color: var(--1color);
+}
+
+#chavePix {
+    display: none;
+}
+
+#alert {
+    width: 14%;
+    height: 5%;
+    background: #6D07F1;
+    border-radius: 10px;
+    position: absolute;
+    top: 430px;
+}
+
+#alert > p {
+    color: white;
+}
+
+.contentLoading > p {
+    font-size: 14px;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.loadingAnimation {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 5px solid grey;
+    border-top-color: #6D07F1;
+    animation: rotate 1s infinite;
+}
+
+#modalPayment > .contentPayment > .hash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px 5px 4px;
+    box-shadow: var(--box-shadow);
+    width: 80%;
+}
+
+.contentPayment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#modalPayment > .contentPayment > .hash > p {
+    color: var(--PlaceHoldercolor);
+    font-size: 90%;
+}
+
+#modalPayment  > .contentPayment > .payment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+
+#modalPayment  > .contentPayment > .payment > h1 {
+    font-size: 25px;
+    font-weight: 100;
+    color: var(--color);
+}
+
+#modalPayment > .contentPayment > .payment > h2 {
+    font-size: clamp(1.75em, 1em, +3vw, 2.5em);
+    font-weight: 600;
+    color: var(--color);
+}
+
+#modalPayment > .contentPayment > .payment > p {
+    font-size: 20px;
+    font-weight: 100;
+    color: var(--color);
+}
+
+.container-qrcode {
+    background: white;
+}
+
+.payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hash > img {
+    cursor: pointer;
+}
+
+.hash > img:hover {
+    scale: 1.05;
+    transition: 0.5s;
+}
+
+#modalPayment > .contentPayment > .payment > button {
+    width: 70%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #7124c4;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-family: 'MADE INFINITY PERSONAL USE', sans-serif;
+}
+
+#modalPayment > .contentPayment > .payment > button:hover {
+    scale: 1.05;
+    transition: 0.5s;
+}
+
+#modalPayment > .contentPayment > .payment > button > img {
+    margin: 10px;
+}
+
+#modalConfirm > img {
+    cursor: pointer;
+}
+
+#modalConfirm > #back-dark {
+    display: none;
+}
+
+#lightmode {
+    display: none;
+}
+
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.content > h1, p {
+    display: flex;
+    justify-content: center;
+    color: var(--color);
+}
+
+#contadorAnimation {
+    width: 25px;
+    height: 25px;
+    border: 5px solid grey;
+    border-top-color: #6D07F1;
+    border-radius: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.mainText {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.mainText > h1 {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container > .mainText > #contador {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+#numeroContador {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content > .button-confirm > button {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #7124c4;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-family: 'MADE INFINITY PERSONAL USE', sans-serif;
+}
+
+span {
+    color: red;
+    font-size: 17px;
+    display: none;
+}
+
+
+
+.data {
+    display: flex;
+    justify-content: space-between;
+    color: var(--color);
+}
+
+.button-confirm {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#hashTransaction {
+    width: 75%;
+    height: 90%;
+    font-size: 20px;
+    border: none;
+    color: var(--PlaceHoldercolor);
+    background: var(--1background);
+    color: var(--color);
+    outline: none;
+}
+
+
+
+form > .button-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 1510px) and (min-width: 1100px) {
+    #container {
+        width: 30vw;
+    }
+}
+
+@media (max-height: 839px) and (min-height: 732px) {
+    .button-buy > button {
+        margin-bottom: 20px;
+        padding: 0px 50px;
+        border-radius: 10px;
+        border: none;
+        background: #7124c4;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .payment-options {
+        margin-bottom: 10px;
+    }
+
+    .pixpay > p {
+        font-size: 20px;
+    }
+
+    #pix {
+        width: 40px;
+        height: 40px;
+    }
+
+    #solana {
+        width: 30px;
+        height: 30px;
+    }
+
+    #brazil {
+        width: 30px;
+        height: 30px;
+    }
+
+    .input-style {
+        padding: 2px 10px;
+    }
+}
+
+
+@media (max-width: 1110px) and (min-width: 900px) {
+    #container {
+        width: 40vw;
+    }
+
+    #brazil {
+        width: 25px;
+        width: 25px;
+    }
+
+    #solana {
+        width: 25px;
+        height: 25px;
+    }
+
+    #buySOL {
+        margin-bottom: 20px;
+        padding: 0px 35px;
+        border-radius: 10px;
+        border: none;
+        background: #7124c4;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+}
+
+
+
+@media (max-width: 900px) and (min-width: 680px) {
+
+    #modalConfirm {
+        width: 450px;
+        height: 350px;
+    }
+    
+
+    #buySOL {
+        margin-bottom: 20px;
+        padding: 0px 25px;
+        border-radius: 10px;
+        border: none;
+        background: #7124c4;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    #container {
+        width: 50vw;
+    }
+    #brazil {
+        width: 20px;
+        width: 20px;
+    }
+
+    #solana {
+        width: 20px;
+        height: 20px;
+    }
+
+    #address::placeholder {
+        font-size: 10px;
+    }
+
+    #address {
+        font-size: 15px;
+    }
+
+    #limit {
+        font-size: 15px;
+    }
+
+    #recieve {
+        font-size: 15px;
+    }
+
+    #limit::placeholder {
+        font-size: 10px;
+    }
+
+    #recieve::placeholder {
+        font-size: 10px;
+    }
+}
+
+@media (max-height: 732px) and (min-height: 626px) {
+
+    .payment-options {
+        margin-bottom: 10px;
+    }
+
+    .pixpay > p {
+        font-size: 20px;
+    }
+
+    #pix {
+        width: 30px;
+        height: 30px;
+    }
+
+    #solana {
+        width: 25px;
+        height: 25px;
+    }
+
+    #brazil {
+        width: 25px;
+        height: 25px;
+    }
+
+    .input-style {
+        padding: 2px 10px;
+    }
+
+    .value > label {
+        font-size: 17px;
+    }
+
+    form {
+        margin-top: 0px;
+    }
+}
+
+@media (max-width: 680px) and (min-width: 508px) {
+    #container {
+        width: 80vw;
+    }
+
+    header > h1 {
+        font-size: 25px;
+    }
+
+    header > ul > li {
+        font-size: 12px;
+    }
+
+    footer {
+        font-size: 5px;
+    }
+
+    #modalConfirm {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-height: 626px) {
+    .button-buy > button {
+        margin-bottom: 20px;
+        padding: 0px 50px;
+        border-radius: 10px;
+        border: none;
+        background: #7124c4;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .payment-options {
+        margin-bottom: 10px;
+    }
+
+    .pixpay > p {
+        font-size: 20px;
+    }
+
+    #pix {
+        width: 30px;
+        height: 30px;
+    }
+
+    #solana {
+        width: 25px;
+        height: 25px;
+    }
+
+    #brazil {
+        width: 25px;
+        height: 25px;
+    }
+
+    .input-style {
+        padding: 2px 10px;
+    }
+
+    .value > label {
+        font-size: 17px;
+    }
+
+    form {
+        margin-top: 0px;
+    }
+
+    main > #container {
+        width: 30%;
+        height: 90%;
+    }
+}
+
+@media (max-width: 508px) and (min-width: 420px) {
+
+    #modalConfirm {
+        width: 300px;
+        height: 250px;
+    }
+
+    #container {
+        width: 70vw;
+    }
+
+    header > h1 {
+        font-size: 20px;
+    }
+
+    header > ul > li {
+        font-size: 9px;
+    }
+
+    footer {
+        font-size: 5px;
+    }
+
+    form > .value > .input-style {
+        width: 80%;
+        height: 25%;
+    }
+
+    #pix {
+        width: 30px;
+        height: 30px;
+    }
+
+    .button-buy > button > .button-details > P {
+        font-size: 15px;
+    }
+
+    #brazil {
+        width: 20px;
+        height: 20px;
+    }
+
+    #solana {
+        width: 20px;
+        height: 20px;
+    }
+
+    #recieve::placeholder {
+        font-size: 15px;
+    }
+
+    #limit::placeholder {
+        font-size: 15px;
+    }
+
+    #limit {
+        font-size: 15px;
+    }
+
+    #recieve {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 420px) and (min-width: 320px) {
+
+    #modalConfirm {
+        width: 300px;
+        height: 300px;
+    }
+
+    #container {
+        width: 80vw;
+    }
+
+    header > h1 {
+        font-size: 20px;
+    }
+
+    header > ul > li {
+        font-size: 9px;
+    }
+
+    footer {
+        font-size: 5px;
+    }
+
+    form > .value > .input-style {
+        width: 80%;
+        height: 30%;
+    }
+
+    #pix {
+        width: 20px;
+        height: 20px;
+    }
+
+    #solana {
+        width: 20px;
+        height: 20px;
+    }
+
+    #brazil {
+        width: 20px;
+        height: 20px;
+    }
+
+    #limit {
+        font-size: 20px;
+    }
+
+    #recieve {
+        font-size: 20px;
+    }
+
+    #darkmode {
+        width: 20px;
+        height: 20px;
+    }
+
+    #lightmode {
+        width: 20px;
+        height: 20px;
+    }
+
+    .button-buy > button {
+        margin-bottom: 10px;
+        padding: 0px 30px;
+    }
+
+    .button-buy > button > .button-details > P {
+        font-size: 12px;
+    }
+
+    input::placeholder {
+        font-size: 15px;
+    }
+    
+}
+
+@media (max-width: 360px) {
+    .text > h2 {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 320px) and (min-width: 280px) {
+    #modalConfirm {
+        width: 300px;
+        height: 300px;
+    }
+
+    #container {
+        width: 80vw;
+    }
+
+    header > h1 {
+        font-size: 20px;
+    }
+
+    header > ul > li {
+        font-size: 9px;
+    }
+
+    footer {
+        font-size: 5px;
+    }
+
+    form > .value > .input-style {
+        width: 80%;
+        height: 30%;
+    }
+
+    #pix {
+        width: 20px;
+        height: 20px;
+    }
+
+    #solana {
+        width: 20px;
+        height: 20px;
+    }
+
+    #brazil {
+        width: 20px;
+        height: 20px;
+    }
+
+    #limit {
+        font-size: 20px;
+    }
+
+    #recieve {
+        font-size: 20px;
+    }
+
+    #darkmode {
+        width: 20px;
+        height: 20px;
+    }
+
+    #lightmode {
+        width: 20px;
+        height: 20px;
+    }
+
+    .button-buy > button {
+        margin-bottom: 10px;
+        padding: 0px 30px;
+    }
+
+    .button-buy > button > .button-details > P {
+        font-size: 10px;
+    }
+
+    input::placeholder {
+        font-size: 12px;
+    }
+
+    .coins > p {
+        font-size: 15px;
+    }
+}
+
+

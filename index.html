@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLPIX</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://www.google.com/recaptcha/api.js?render=6Lfl59MlAAAAADsJshGwpPBsWceFJTH4Kzi9X33-"></script>
+</head>
+    
+<body>
+    <header>
+        <h1>SOLPIX</h1>
+        <ul>
+            <li>Comprar SOL</li>
+            <!-- <li class="comingsoon">NFT Checkout</li>
+            <li class="comingsoon">Sobre</li> -->
+        </ul>
+        <div class="right">
+            <!-- <button class="connect">Conectar carteira</button> -->
+            <label class="checkbox-icon">
+                <input type="checkbox" id="change-theme" name="theme">
+                <img id="darkmode" class="darkmode" src="image/nightmode.png" alt="darkmode">
+                <img id="lightmode" src="image/lightmode.png" alt="lightmode">
+            </label>
+        </div>
+    </header>
+    <main>
+        <div class="container" id="container">
+            <div class="mainText">
+                <h1>SOLPIX</h1>
+                <div id="contador">
+                    <div id="contadorAnimation">
+                        <p id="numeroContador"></p>
+                    </div>
+                </div>
+            </div>
+            <form  id="form">
+                <div class="value" id="value">
+                    <label for="limit">Eu quero investir</label>
+                    <div class="input-style">
+                        <input type="number" placeholder="Mínimo: 50R$" id="limit" class="inputs required" oninput="valueValidation()">
+                        <div class="coins">
+                            <img src="image/Brazil.png" alt="brazil-flag" id="brazil">
+                            <p>BRL</p>
+                        </div>
+                    </div>
+                    <span class="span-required">Quantidade Miníma de R$50.00</span>
+                </div>
+                <div class="value" id="value">
+                    <label for="recieve">Você receberá</label>
+                    <div class="input-style">
+                        <input type="text" placeholder="Mínimo: 50R$" id="recieve" class="inputs required" disabled>
+                        <div class="coins">
+                            <img src="image/solana.png" alt="solana-logo" id="solana">
+                            <p>SOL</p>
+                        </div>
+                    </div>
+                    <span class="span-required"></span>
+                </div>
+                <div class="value" id="value">
+                    <label for="address">Endereço da solana</label>
+                    <div class="input-style">
+                        <input type="text" placeholder="DTNs....k5SQ" id="address" class="inputs required" oninput="walletValidation()">
+                    </div>
+                    <span class="span-required">digite um endereço válido</span>
+                </div>
+                <div class="payment-options">
+                    <label class="value">Pague com:</label>
+                    <div class="pixpay">
+                        <img src="image/pix.png" alt="pix-icon" id="pix">
+                        <p>PixPay</p>
+                    </div>
+                </div>
+                <div class="button-buy">
+                    <button id="buySOL" type="submit">
+                        <div class="button-details">
+                            <i class="fa-solid fa-bolt"></i>
+                            <p>Comprar SOL</p>
+                        </div>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <div class="modal">
+        <dialog id="modalConfirm">
+            <img src="image/back.png" alt="back" id="back-light">
+            <img src="image/back-dark.png" alt="back" id="back-dark">
+            <div class="content">
+                <h1>PIXSOL</h1>
+                <p>Confirme os dados</p>
+                <div class="data">
+                    <p>cotação</p>
+                    <p class="valor"></p>
+                </div>
+                <div class="data">
+                    <p>Taxas</p>
+                    <p class="valor"></p>
+                </div>
+                <div class="data">
+                    <p>Taxas da rede</p>
+                    <p class="valor"></p>
+                </div>
+                <div class="data">
+                    <p>Você receberá</p>
+                    <p class="valor"></p>
+                </div>
+                <div class="data">
+                    <p>Endereço</p>
+                    <p class="valor"></p>
+                </div>
+                <div class="data">
+                    <p>Total</p>
+                    <p class="valor"></p>
+                </div>
+                <div class="button-confirm">
+                    <button id="buttonConfirm" >Confirmar e pagar</button>
+                </div>
+            </div>
+        </div>
+        </dialog>
+    </div>
+    <div class="modalPayment">
+        <dialog id="modalPayment">
+            <div class="contentPayment">
+                <div class="hash">
+                    <img src="image/copy.png" alt="copypaste" onclick="teste()">
+                    <input type="text" id="hashTransaction" readonly>
+                    <img src="image/copypaste.png" alt="copypaste" onclick="copyPaste()">
+                </div>
+                <div class="payment">
+                    <h1>Aguardando o pagamento</h1>
+                    <h2 id="pricePix"></h2>
+                    <div class="container-qrcode">
+                        <img id="qrcode" src="" alt="qrcode">
+                    </div>
+                    <input type="text" id="chavePix">
+                    <p></p>
+                    <div id="alert" style="display:none;">
+                        <p>copy</p>
+                    </div>
+                    <button id="button-copy" onclick="showAlert()" ><img src="image/copyPng.png" alt="copy">copiar chave</button>
+                </div>
+            </div>
+        </dialog>
+    </div>
+    <div class="modalLoading">
+        <dialog id="modalLoading">
+            <div class="contentLoading">
+                <div class="loadingAnimation">
+                </div>
+            </div>
+        </dialog>
+    </div>
+    <div class="modalPaymentConfirm">
+        <dialog id="modalPaymentConfirm">
+            <div class="contentPaymentConfirm">
+                <h1>PIXSOL</h1>
+                <img src="image/confirm.png" alt="">
+                <div class="text">
+                    <h2>Pagamento recebido com sucesso!</h2>
+                    <p>A moeda será enviada em ate 24 horas</p>
+                </div>
+            </div>
+        </dialog>
+    </div>
+    <footer>
+        <h1>copyright &copy;2023 SOLPIX | Todos os direitos reservados.</h1>
+    </footer>
+<script src="script.js"></script>
+</body>
+</html>
