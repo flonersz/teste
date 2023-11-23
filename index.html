@@ -126,7 +126,7 @@
         <dialog id="modalPayment">
             <div class="contentPayment">
                 <div class="hash">
-                    <img src="image/copy.png" alt="copypaste" onclick="teste()">
+                    <img src="image/copy.png" alt="copypaste">
                     <input type="text" id="hashTransaction" readonly>
                     <img src="image/copypaste.png" alt="copypaste" onclick="copyPaste()">
                 </div>
@@ -157,6 +157,11 @@
     <div class="modalPaymentConfirm">
         <dialog id="modalPaymentConfirm">
             <div class="contentPaymentConfirm">
+                <div class="hash">
+                    <img src="image/copy.png" alt="copypaste">
+                    <input type="text" id="hashTransactionSol" readonly>
+                    <img src="image/copypaste.png" alt="copypaste" onclick="copyPasteHash()">
+                </div>
                 <h1>PIXSOL</h1>
                 <img src="image/confirm.png" alt="">
                 <div class="text">
@@ -169,6 +174,9 @@
     <footer>
         <h1>copyright &copy;2023 SOLPIX | Todos os direitos reservados.</h1>
     </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+
 <script src="script.js"></script>
 </body>
 </html>

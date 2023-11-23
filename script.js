@@ -1,4 +1,5 @@
 
+
 const form = document.getElementById('form')
 const required = document.querySelectorAll('.required')
 const spans = document.querySelectorAll('.span-required')
@@ -19,7 +20,7 @@ for (var i = 0; i < required.length; i++) {
         const valorSOL = required[1]
         const address = required[2].value
         
-        fetch(`https://api-swap.api-pay.org/api/420f54df-4fda-4794-9ffa-94bf36154ef2/cotacao?de_moeda=BRL&para_moeda=SOL&de_qtd=${valorBRL}&cotacao_req_id=ac0ffe9f-cc76-455c-1eab-2c21385406f2`)
+        fetch(`https://api-swap.api-pay.org/api/420f54df-4fda-4794-9ffa-94bf36154ef2/cotacao?de_moeda=BRL&para_moeda=SOL&de_qtd=${valorBRL}&cotacao_req_id=${crypto.randomUUID()}`)
         .then((res) => res.json())
         .then((data) => {
             const cotacao = parseFloat(data.cotacao)
@@ -83,7 +84,14 @@ form.addEventListener('submit', event => {
 })
 
 
+function paymentConfirm() {
+    const modalPayment = document.getElementById('modalPayment')
+    const modalPaymentConfirm = document.getElementById('modalPaymentConfirm')
+    modalPayment.style.display = "none"
+    modalPaymentConfirm.showModal()
+}
 
+let endereco = ""
 let transaction_id = "";
 buttonConfirm.addEventListener('click', function() {
   confirmValidate(transaction_id)
@@ -127,6 +135,16 @@ async function confirmValidate(id) {
         fetch(`https://api-swap.api-pay.org/api/420f54df-4fda-4794-9ffa-94bf36154ef2/cotacao/detalhes-cobranca?cobranca_id=${data.id}`)
             .then((res) => res.json())
             .then((data) => {
+
+                if (data.status == "Pago") {
+                    paymentConfirm()
+                    const jsConfetti = new JSConfetti()
+                    jsConfetti.addConfetti()
+                    console.log("Transação paga")
+                    const hashTransactionSol = document.getElementById('hashTransactionSol')
+                    hashTransactionSol.value = data.hash
+                }
+                
                 if(data.status == "Expirado"){
                     clearInterval(detalhes_cobranca)
                     console.log('transação expirada')
@@ -163,18 +181,18 @@ function cleanInput() {
                 inputBRL.value = '';
                 inputSOL.value = '';
                 clearInterval(interval); 
-                setTimeout(iniciarContagem, 0); // Reinicia o contador após 1 segundo
+                setTimeout(iniciarContagem, 0);
             }
-        }, 1000); // Atualiza a cada segundo (1000 milissegundos = 1 segundo)
+        }, 1000); 
     }
     iniciarContagem();
 }
 
-cleanInput(); // Chama a função para iniciar o temporizador
-
+cleanInput(); 
 
 
 async function postValidate(numero) {
+    let address = document.getElementById("address").value
   console.log(numero)
   const token = await grecaptcha.execute("6Lfl59MlAAAAADsJshGwpPBsWceFJTH4Kzi9X33-", { action: "submit"})
   console.log(token)
@@ -185,12 +203,13 @@ async function postValidate(numero) {
       'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-      endereco: `7uqX4gfQb6WCTXX3twgYk5ozBnNjxJd1xaDFa6XUJcQS`,
+      endereco: address,
       token: token,
   })})    
   .then((res) => res.json())
   .then((data) => {
     transaction_id = data.id
+
   })
 }
 
@@ -214,8 +233,8 @@ function showAlert() {
     const alerta = document.getElementById('alert');
     alerta.style.display = 'block'; 
     setTimeout(function(){
-        alerta.style.display = 'none'; // Oculta a div após 2 segundos
-    }, 1000); // 2000 milissegundos = 2 segundos
+        alerta.style.display = 'none'; 
+    }, 1000); 
 }
 
 
@@ -230,13 +249,15 @@ function removeError(index){
 }
 
 function valueValidation() {
-  var numero = document.getElementById("limit").value
+  let numero = document.getElementById("limit").value
+  let numeroSol = document.getElementById('recieve').value
   numero = parseFloat(numero);
 
   if (isNaN(numero) || numero <= 50) {
       error(0)
       return false
   }
+
   else {
       removeError(0)
       return true
@@ -325,14 +346,15 @@ function changeProperty(property, value) {
 
 
 
-// modalPaymentConfirm.showModal()
+
 
 const input = document.getElementById('hashTransaction')
+const inputSol = document.getElementById('hashTransactionSol')
 
-function teste() {
-    var randomStr = Math.random().toString(36).slice(-10)
 
-    input.value = randomStr
+
+function copyPasteHash() {
+    navigator.clipboard.writeText(inputSol.value)
 }
 
 function copyPaste() {
@@ -350,10 +372,6 @@ backLight.onclick = function() {
     required[0].value = ''
 }
 
-// copy.onclick = function() {
-//     modalLoading.showModal()
-//     modalPayment.close()
-// }
 
 backDark.onclick = function() {
     container.style.display = "flex"

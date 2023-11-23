@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400&display=swap');
 @import url('https://fonts.cdnfonts.com/css/made-infinity-personal-use');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 
 * {
     margin: 0;
@@ -45,6 +46,8 @@ ul{
 header > h1 {
     color: #7124c4;
 }
+
+
 
 .connect {
     border-radius: 15px;
@@ -390,6 +393,7 @@ dialog {
     justify-content: space-around;
     height: 80%;
     color: var(--color);
+    font-family: 'ABeeZee', sans-serif;
 }
 
 .text {
@@ -505,6 +509,7 @@ dialog {
     font-size: 25px;
     font-weight: 100;
     color: var(--color);
+    text-align: center;
 }
 
 #modalPayment > .contentPayment > .payment > h2 {
@@ -588,15 +593,52 @@ dialog {
     color: var(--color);
 }
 
+@keyframes text-anti-spin {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(-360deg);
+    }
+}
+
+
+@keyframes spin {
+    0% {
+      border-top-color: #6D07F1 ;
+    }
+    25% {
+        border-right-color: #6D07F1 ;
+    }
+    50% {
+        border-bottom-color: #6D07F1 ;
+    }
+    75% {
+        border-left-color: #6D07F1 ;
+    }
+    100% {
+        border-top-color: #6D07F1 ;
+    }
+}
+
+#contadorAnimation > #numeroContador {
+    animation: none !important;
+}
+
 #contadorAnimation {
     width: 25px;
     height: 25px;
-    border: 5px solid grey;
+    border: 3px solid rgb(255, 255, 255);
     border-top-color: #6D07F1;
     border-radius: 500px;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    animation: spin 15s infinite;
+}
+
+#numeroContador {
+    font-family: 'MADE INFINITY PERSONAL USE', sans-serif;
 }
 
 .mainText {
@@ -613,6 +655,8 @@ dialog {
     align-items: center;
     justify-content: center;
 }
+
+
 
 .container > .mainText > #contador {
     width: 80%;
@@ -675,6 +719,38 @@ span {
     outline: none;
 }
 
+.hash {
+    width: 75%;
+    height: 8%;
+    font-size: 20px;
+    border: none;
+    color: var(--PlaceHoldercolor);
+    background: var(--1background);
+    color: var(--color);
+    outline: none;
+}
+
+#modalPaymentConfirm > .contentPaymentConfirm > .hash {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-content: space-around;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px 10px 5px 4px;
+    box-shadow: var(--box-shadow);
+    width: 75%;
+}
+
+#modalPaymentConfirm > .contentPaymentConfirm > .hash > input {
+    width: 75%;
+    height: 90%;
+    font-size: 20px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
 
 
 form > .button-buy {
@@ -687,7 +763,12 @@ form > .button-buy {
     #container {
         width: 30vw;
     }
+    span {
+        font-size: 14px;
+    }
 }
+
+
 
 @media (max-height: 839px) and (min-height: 732px) {
     .button-buy > button {
@@ -731,6 +812,11 @@ form > .button-buy {
 
 
 @media (max-width: 1110px) and (min-width: 900px) {
+
+    span {
+        font-size: 13px;
+    }
+
     #container {
         width: 40vw;
     }
@@ -875,6 +961,8 @@ form > .button-buy {
         width: 300px;
         height: 300px;
     }
+
+    
 }
 
 @media (max-height: 626px) {
@@ -930,7 +1018,12 @@ form > .button-buy {
     }
 }
 
-@media (max-width: 508px) and (min-width: 420px) {
+@media (max-width: 508px) and (min-width: 430px) {
+
+    #contadorAnimation {
+        width: 20px;
+        height: 20px;
+    }
 
     #modalConfirm {
         width: 300px;
@@ -994,7 +1087,11 @@ form > .button-buy {
     }
 }
 
-@media (max-width: 420px) and (min-width: 320px) {
+@media (max-width: 430px) and (min-width: 320px) {
+
+    span {
+        font-size: 12px;
+    }
 
     #modalConfirm {
         width: 300px;
@@ -1018,7 +1115,7 @@ form > .button-buy {
     }
 
     form > .value > .input-style {
-        width: 80%;
+        width: 90%;
         height: 30%;
     }
 
@@ -1109,13 +1206,13 @@ form > .button-buy {
     }
 
     #solana {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
     }
 
     #brazil {
-        width: 20px;
-        height: 20px;
+        width: 15px;
+        height: 15px;
     }
 
     #limit {
@@ -1150,7 +1247,20 @@ form > .button-buy {
     }
 
     .coins > p {
-        font-size: 15px;
+        font-size: 12px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    #hashTransaction {
+        font-size: 14px;
+    }
+
+    #contadorAnimation {
+        width: 20px;
+        height: 20px;
     }
 }
 
