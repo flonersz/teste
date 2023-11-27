@@ -33,9 +33,11 @@ for (var i = 0; i < required.length; i++) {
             const lastNumbers = address.substring(address.length - 4);
 
             const format = firstNumbers + '...' + lastNumbers
-            console.log(totalSOL)
 
             valorSOL.value = totalSOL.toFixed(3)
+            if(isNaN(valorSOL.value)) {
+                valorSOL.value = ''
+            }
             valor[0].innerText = `R$${cotacao.toFixed(2)}`
             valor[1].innerText = `R$${taxas.toFixed(2)}`
             valor[2].innerText = `R$${taxa_rede.toFixed(2)}`
@@ -45,11 +47,6 @@ for (var i = 0; i < required.length; i++) {
         
             
         })
-
-
-
-        console.log(`valor digitado: ${valorBRL}`)
-        console.log(`wallet digitada: ${address}`)
     })
 }
 
@@ -62,15 +59,13 @@ form.addEventListener('submit', event => {
     let address = document.getElementById("address").value
     numero = parseFloat(numero);
 
-    if (isNaN(numero) || numero <= 50) {
+    if (isNaN(numero) || numero < 50) {
         error(0)
-        console.log('preencha um valor')
         return false
     }
 
     else if (address.length !== 44) {
         error(2)
-        console.log('preencha um valor')
         return false
     }
 
@@ -99,7 +94,6 @@ buttonConfirm.addEventListener('click', function() {
 
 async function confirmValidate(id) {
   const token = await grecaptcha.execute("6Lfl59MlAAAAADsJshGwpPBsWceFJTH4Kzi9X33-", { action: "submit"})
-  console.log(token)
   fetch(`https://api-swap.api-pay.org/api/420f54df-4fda-4794-9ffa-94bf36154ef2/cotacao/emitir-cobranca`, {
   method: 'POST',
   headers: {
@@ -126,7 +120,6 @@ async function confirmValidate(id) {
             navigator.clipboard.writeText(chavePix.value)
                 .then(function() {
                     console.log('Texto copiado para a área de transferência');
-                    // Adicione aqui qualquer lógica adicional após a cópia
                 })
                 .catch(function(err) {
                     console.error('Erro ao copiar o texto: ', err);
@@ -140,14 +133,12 @@ async function confirmValidate(id) {
                     paymentConfirm()
                     const jsConfetti = new JSConfetti()
                     jsConfetti.addConfetti()
-                    console.log("Transação paga")
                     const hashTransactionSol = document.getElementById('hashTransactionSol')
                     hashTransactionSol.value = data.hash
                 }
                 
                 if(data.status == "Expirado"){
                     clearInterval(detalhes_cobranca)
-                    console.log('transação expirada')
                 }
                 async function getPix() {
                     const pricePix = document.getElementById('pricePix')
@@ -193,9 +184,7 @@ cleanInput();
 
 async function postValidate(numero) {
     let address = document.getElementById("address").value
-  console.log(numero)
   const token = await grecaptcha.execute("6Lfl59MlAAAAADsJshGwpPBsWceFJTH4Kzi9X33-", { action: "submit"})
-  console.log(token)
 
   fetch(`https://api-swap.api-pay.org/api/420f54df-4fda-4794-9ffa-94bf36154ef2/cotacao?de_moeda=BRL&para_moeda=SOL&de_qtd=${numero}`, {
   method: 'POST',
@@ -253,7 +242,7 @@ function valueValidation() {
   let numeroSol = document.getElementById('recieve').value
   numero = parseFloat(numero);
 
-  if (isNaN(numero) || numero <= 50) {
+  if (isNaN(numero) || numero < 50) {
       error(0)
       return false
   }

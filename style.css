@@ -250,6 +250,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
 }
 
 #change-theme {
@@ -1221,6 +1222,97 @@ form > .button-buy {
 
     #recieve {
         font-size: 20px;
+    }
+
+    #darkmode {
+        width: 20px;
+        height: 20px;
+    }
+
+    #lightmode {
+        width: 20px;
+        height: 20px;
+    }
+
+    .button-buy > button {
+        margin-bottom: 10px;
+        padding: 0px 30px;
+    }
+
+    .button-buy > button > .button-details > P {
+        font-size: 10px;
+    }
+
+    input::placeholder {
+        font-size: 12px;
+    }
+
+    .coins > p {
+        font-size: 12px;
+    }
+
+    span {
+        font-size: 12px;
+    }
+
+    #hashTransaction {
+        font-size: 14px;
+    }
+
+    #contadorAnimation {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@media (max-width: 280px) and (min-width: 240px) {
+    #modalConfirm {
+        width: 300px;
+        height: 300px;
+    }
+
+    #container {
+        width: 80vw;
+    }
+
+    header > h1 {
+        font-size: 20px;
+    }
+
+    header > ul > li {
+        font-size: 9px;
+    }
+
+    footer {
+        font-size: 5px;
+    }
+
+    form > .value > .input-style {
+        width: 80%;
+        height: 30%;
+    }
+
+    #pix {
+        width: 17px;
+        height: 20px;
+    }
+
+    #solana {
+        width: 13px;
+        height: 13px;
+    }
+
+    #brazil {
+        width: 13px;
+        height: 13px;
+    }
+
+    #limit {
+        font-size: 17px;
+    }
+
+    #recieve {
+        font-size: 17px;
     }
 
     #darkmode {
