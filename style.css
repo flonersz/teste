@@ -170,7 +170,6 @@ form > .value > .input-style > input {
     height: 90%;
     font-size: 30px;
     font-family: 'Geologica', sans-serif;
-    padding-left: 10px;
     border: none;
     outline: none;
     background: var(--2color);
