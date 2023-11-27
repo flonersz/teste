@@ -103,6 +103,7 @@ main {
 }
 
 main > .container {
+    min-width: 250px;
     width: 20%;
     height: 70%;
     background: var(--1background);
@@ -318,6 +319,7 @@ i {
 }
 
 #modalConfirm {
+    min-width: 250px;
     width: 400px;
     height: 350px;
     border-radius: 10px;
@@ -355,6 +357,7 @@ dialog {
 }
 
 #modalLoading {
+    min-width: 250px;
     width: 450px;
     height: 350px;
     border-radius: 10px;
