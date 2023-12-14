@@ -14,7 +14,8 @@
     <header>
         <h1>WEB3PIX</h1>
         <ul>
-            <!-- <li>Comprar SOL</li> -->
+            <!-- <a href="index.html"><li>Comprar</li></a> -->
+            <!-- <a href=""><li>Swap</li></a> -->
             <!-- <li class="comingsoon">NFT Checkout</li>
             <li class="comingsoon">Sobre</li> -->
         </ul>
@@ -39,33 +40,41 @@
             </div>
             <form  id="form">
                 <div class="value" id="value">
-                    <label for="limit">Eu quero investir</label>
+                    <label for="limit">Eu quero investir:</label>
                     <div class="input-style">
                         <input type="number" placeholder="Mínimo: 50R$" id="limit" class="inputs required" oninput="valueValidation()">
-                        <div class="coins">
-                            <img src="image/Brazil.png" alt="brazil-flag" id="brazil">
-                            <p>BRL</p>
-                        </div>
+                        <img src="image/Brazil.png" alt="brazil-flag" id="brazil">
+                        <select name="coins" id="stable">
+                            <option value="brl">
+                                BRL
+                            </option>
+                        </select>   
                     </div>
                     <span class="span-required">Quantidade Miníma de R$50.00</span>
                 </div>
                 <div class="value" id="value">
-                    <label for="recieve">Você receberá</label>
+                    <label for="recieve">Você receberá:</label>
                     <div class="input-style">
                         <input type="text" placeholder="Mínimo: 50R$" id="recieve" class="inputs required" disabled>
-                        <div class="coins">
-                            <img src="image/solana.png" alt="solana-logo" id="solana">
-                            <p>SOL</p>
-                        </div>
+                        <img src="image/solana.png" alt="solana-logo" id="solana">
+                        <img src="image/usdt.png" alt="solana-logo" id="usdt">
+                        <select name="coins" id="crypto">
+                            <option value="SOL">
+                                SOL
+                            </option>
+                            <option value="USDT">
+                                USDT
+                            </option>
+                        </select>
                     </div>
                     <span class="span-required"></span>
                 </div>
                 <div class="value" id="value">
-                    <label for="address">Endereço da Solana</label>
+                    <label for="address">Endereço:</label>
                     <div class="input-style">
                         <input type="text" placeholder="DTNs....k5SQ" id="address" class="inputs required" oninput="walletValidation()">
                     </div>
-                    <span class="span-required">digite um endereço válido</span>
+                    <span class="span-required">digite um endereço válido!</span>
                 </div>
                 <div class="payment-options">
                     <label class="value">Pague com:</label>
@@ -87,10 +96,17 @@
     </main>
     <div class="modal">
         <dialog id="modalConfirm">
-            <img src="image/back.png" alt="back" id="back-light">
-            <img src="image/back-dark.png" alt="back" id="back-dark">
+            <div class="headers">
+                <img src="image/back.png" alt="back" id="back-light" class="buttonExit">
+                <img src="image/back-dark.png" alt="back" id="back-dark" class="buttonExit">
+                <div id="contador">
+                    <div id="contadorAnimation">
+                        <p id="numeroContadorConfirm"></p>
+                    </div>
+                </div>
+            </div>
             <div class="content">
-                <h1>PIXSOL</h1>
+                <h1>WEB3PIX</h1>
                 <p>Confirme os dados</p>
                 <div class="data">
                     <p>cotação</p>
@@ -163,11 +179,23 @@
                     <input type="text" id="hashTransactionSol" readonly>
                     <img src="image/copypaste.png" alt="copypaste" onclick="copyPasteHash()">
                 </div>
-                <h1>PIXSOL</h1>
-                <img src="image/confirm.png" alt="">
+                <h1>WEB3PIX</h1> 
+                <script id="scriptAnimation" type="module"></script> <dotlottie-player src="https://lottie.host/cbf50b37-4663-41fb-9ca9-7fb0d6840e69/ZlwDlITYgY.json" background="transparent" speed="1" style="width: 120px; height: 120px;"  autoplay></dotlottie-player>
                 <div class="text">
                     <h2>Pagamento recebido com sucesso!</h2>
-                    <p>A moeda será enviada em ate 24 horas</p>
+                    <p>O token será enviado em ate 24 horas.</p>
+                </div>
+            </div>
+        </dialog>
+    </div>
+    <div class="modalPaymentError">
+        <dialog id="modalPaymentError">
+            <div class="contentPaymentError">
+                <h1>WEB3PIX</h1> 
+                <img src="image/error.png" alt="">
+                <div class="text">
+                    <h2>O pix foi expirado!</h2>
+                    <p>tente novamente mais tarde.</p>
                 </div>
             </div>
         </dialog>
@@ -175,9 +203,11 @@
     <footer>
         <h1>copyright &copy;2023 WEB3PIX | Todos os direitos reservados.</h1>
     </footer>
+    
+    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
 
-<script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
 
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
