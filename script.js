@@ -98,7 +98,7 @@ form.addEventListener('submit', event => {
     let address = document.getElementById("address").value
     numero = parseFloat(numero);
 
-    if (isNaN(numero) || numero < 50) {
+    if (isNaN(numero) || numero < 15) {
         error(0)
         return false
     }
@@ -367,7 +367,7 @@ function valueValidation() {
   let numeroSol = document.getElementById('recieve').value
   numero = parseFloat(numero);
 
-  if (isNaN(numero) || numero < 50) {
+  if (isNaN(numero) || numero < 15) {
       error(0)
       return false
   }
