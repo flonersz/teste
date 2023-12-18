@@ -1018,6 +1018,10 @@ form > .button-buy {
 
 @media (max-height: 732px) and (min-height: 626px) {
 
+    select {
+        height: 22px;
+    }
+
     .payment-options {
         margin-bottom: 10px;
     }
@@ -1151,6 +1155,7 @@ form > .button-buy {
         height: 90%;
     }
 }
+
 
 @media (max-width: 508px) and (min-width: 430px) {
 
