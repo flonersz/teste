@@ -16,7 +16,8 @@ const modalPaymentConfirm = document.getElementById('modalPaymentConfirm')
 const buttonConfirm = document.getElementById('buttonConfirm')
 const container = document.getElementById('container')
 
-// modalPaymentConfirm.showModal()
+
+
 
 
 for (var i = 0; i < required.length; i++) {

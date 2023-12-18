@@ -1296,6 +1296,11 @@ form > .button-buy {
         font-size: 20px;
     }
 
+    #logo {
+        width: 55.3px;
+        height: 38.5px;
+    }
+
     #darkmode {
         width: 20px;
         height: 20px;
@@ -1385,6 +1390,11 @@ form > .button-buy {
 
     #recieve {
         font-size: 20px;
+    }
+
+    #logo {
+        width: 55.3px;
+        height: 38.5px;
     }
 
     #darkmode {
@@ -1486,6 +1496,11 @@ form > .button-buy {
 
     #recieve {
         font-size: 17px;
+    }
+
+    #logo {
+        width: 55.3px;
+        height: 38.5px;
     }
 
     #darkmode {
