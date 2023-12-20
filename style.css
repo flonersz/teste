@@ -71,6 +71,11 @@ header > h1 {
     font-family: 'Geologica', sans-serif;
 }
 
+#hashTransactionSol {
+    background: var(--1background);
+    color: var(--color);
+}
+
 .connect:hover {
     scale: 1.1;
     transition-duration: 0.2s;
